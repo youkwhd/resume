@@ -1,10 +1,10 @@
 #!/usr/bin/perl
 
-use Crypt::Mode::ECB;
+require "common.pl";
 
-sub trim {
-    $_[0] =~ s/^\s+|\s+$//g;
-}
+use warnings;
+use strict;
+use Crypt::Mode::ECB;
 
 sub get_private_key {
     my $private_key_file = "private-key";
@@ -13,15 +13,11 @@ sub get_private_key {
     die "FATAL: Cannot find $private_key_file\n" if not open $fh, "<", $private_key_file;
 
     my $key = <$fh>;
-    trim $key;
+    Common::trim $key;
 
     die "FATAL: Error during file closing\n" if not close $fh;
 
     $key;
-}
-
-sub bin_to_hex_little ($) {
-    unpack "H*", $_[0];
 }
 
 my $key = get_private_key();
@@ -30,4 +26,4 @@ my $crypt = Crypt::Mode::ECB->new("AES");
 my $cp = $crypt->encrypt("Hello from Perl", $key);
 my $dc = $crypt->decrypt($cp, $key);
 
-print bin_to_hex_little($cp), "\n", "$dc\n";
+print Common::bin_to_hex_little($cp), "\n", "$dc\n";
