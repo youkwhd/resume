@@ -2,22 +2,22 @@
 
 use Crypt::Mode::ECB;
 
+sub trim {
+    $_[0] =~ s/^\s+|\s+$//g;
+}
+
 sub get_private_key {
     my $private_key_file = "private-key";
     my $fh;
 
     die "FATAL: Cannot find $private_key_file\n" if not open $fh, "<", $private_key_file;
 
-    my $key = trim(<$fh>);
+    my $key = <$fh>;
+    trim $key;
 
     die "FATAL: Error during file closing\n" if not close $fh;
 
     $key;
-}
-
-sub trim {
-    $_[0] =~ s/^\s+|\s+$//g;
-    $_[0];
 }
 
 sub bin_to_hex_little ($) {
