@@ -3,6 +3,7 @@
 % Document margins
 \usepackage[left=0.40in,top=0.3in,right=0.75in,bottom=0.1in]{geometry}
 \usepackage[colorlinks=true, urlcolor=blue, linkcolor=red]{hyperref}
+\usepackage{xcolor}
 
 \pagestyle{empty}
 
@@ -10,9 +11,9 @@
 \author{[% name %]}
 
 \newenvironment{entry}[1]{
-    \noindent {\Large \scshape #1} \par
-    \vskip -0.3em
-    \noindent \rule{\textwidth}{1pt}
+    \noindent {\Large \scshape #1}
+    \vskip -0.6em
+    \noindent {\color{black}\rule{\textwidth}{1pt}}
     \normalsize
     \vspace{-0.5em}
     \noindent \\
@@ -45,9 +46,11 @@
             [%- END %]
         \end{itemize}
         [%- END %]
+
+        \vspace{5pt}
     \end{entry}
 
-    \begin{entry}{Personal Projects}
+    \begin{entry}{Projects}
         [% FOREACH project IN sections.projects -%]
         \noindent
         \textbf{[% project.name %]} \hfill \textit{[% project.date %]} \\
@@ -59,6 +62,8 @@
             [%- END %]
         \end{itemize}
         [%- END %]
+
+        \vspace{5pt}
     \end{entry}
 
     \begin{entry}{Education}
