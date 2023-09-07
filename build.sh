@@ -13,12 +13,12 @@ file_check_or_exit private-key
 
 if [ ! -e data.public.yaml ]; then
     file_check_or_exit data.yaml
-    ./gen-data.pl --encrypt
+    ./bin/gen-data.pl --encrypt
 fi
 
 if [ ! -e data.yaml ]; then
     file_check_or_exit data.public.yaml
-    ./gen-data.pl --decrypt
+    ./bin/gen-data.pl --decrypt
 fi
 
-./gen-resume.pl | pdflatex --jobname=resume
+./bin/gen-resume.pl | pdflatex --jobname=resume
