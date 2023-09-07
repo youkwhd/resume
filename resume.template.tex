@@ -33,14 +33,29 @@
 \begin{document}
     \maketitle
 
-    \begin{entry}{Projects}
-        [% FOREACH project IN sections.projects -%]
+    \begin{entry}{Experience}
+        [% FOREACH experience IN sections.experiences -%]
         \noindent
-        \textbf{[% project.name %]}
+        \textbf{[% experience.title %]} \hfill \textit{[% experience.date %]} \\
+        [% experience.description %]
         \begin{itemize}
             \setlength\itemsep{1px}
-            [% FOREACH desc IN project.descriptions -%]
-            \item [% desc %]
+            [% FOREACH point IN experience.keypoints -%]
+            \item [% point %]
+            [%- END %]
+        \end{itemize}
+        [%- END %]
+    \end{entry}
+
+    \begin{entry}{Personal Projects}
+        [% FOREACH project IN sections.projects -%]
+        \noindent
+        \textbf{[% project.name %]} \hfill \textit{[% project.date %]} \\
+        [% project.description %]
+        \begin{itemize}
+            \setlength\itemsep{1px}
+            [% FOREACH point IN project.keypoints -%]
+            \item [% point %]
             [%- END %]
         \end{itemize}
         [%- END %]
