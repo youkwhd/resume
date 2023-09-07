@@ -1,18 +1,42 @@
 \documentclass[letterpaper,12pt]{article}
 
+% Document margins
+\usepackage[left=0.40in,top=0.3in,right=0.75in,bottom=0.1in]{geometry}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=red]{hyperref}
+
+\pagestyle{empty}
+
 \title{Résumé}
-\author{Your Name}
+\author{[% name %]}
+
+\newenvironment{entry}[1]{
+    \noindent {\Large \scshape #1} \par
+    \vskip -0.3em
+    \noindent \rule{\textwidth}{1pt}
+    \normalsize
+    \vspace{-0.5em}
+    \noindent \\
+}
 
 \makeatletter
 \def \@maketitle {
     \begin{center}
-        \noindent \Huge \textbf{\@author} \normalsize
+        \textbf{\Huge \@author} \\ \vspace{3pt}
 
-        [% location %] | [% email %] | [% website %] | [% phone %]
+        [% location %] \\ \vspace{3pt}
+
+        [% phone %] $|$ \href{mailto:[% email %]}{[% email %]} $|$ \href{https://[% website %]}{[% website %]} \\
     \end{center}
 }
 \makeatother
 
 \begin{document}
     \maketitle
+    \begin{entry}{Education}
+        [% FOREACH education IN sections.education -%]
+        \textbf{[% education.name %]} \hfill \textbf{[% education.place %]} \\
+        [% education.description %] \hfill \textit{[% education.start %] - [% education.end %]}
+        [%- END %]
+        \vskip 1.4em
+    \end{entry}
 \end{document}

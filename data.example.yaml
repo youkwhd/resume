@@ -1,5 +1,13 @@
 ---
+name: Jack 5
 email: johndoe@youkwhd.com
 website: youkwhd.com
-phone: +62 666-1024-999 
+phone: (+62) 666-1024-999 
 location: Atjeh, Indonesia
+sections:
+  education:
+    - name: Hogwarts University
+      place: Wizarding World
+      description: Bachelor of Wizardry, Half Blood Prince
+      start: August 1945
+      end: December 1950
