@@ -32,11 +32,24 @@
 
 \begin{document}
     \maketitle
+
+    \begin{entry}{Projects}
+        [% FOREACH project IN sections.projects -%]
+        \noindent
+        \textbf{[% project.name %]}
+        \begin{itemize}
+            \setlength\itemsep{1px}
+            [% FOREACH desc IN project.descriptions -%]
+            \item [% desc %]
+            [%- END %]
+        \end{itemize}
+        [%- END %]
+    \end{entry}
+
     \begin{entry}{Education}
         [% FOREACH education IN sections.education -%]
         \textbf{[% education.name %]} \hfill \textbf{[% education.place %]} \\
         [% education.description %] \hfill \textit{[% education.start %] - [% education.end %]}
         [%- END %]
-        \vskip 1.4em
     \end{entry}
 \end{document}

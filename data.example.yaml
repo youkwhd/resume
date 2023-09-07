@@ -11,3 +11,12 @@ sections:
       description: Bachelor of Wizardry, Half Blood Prince
       start: August 1945
       end: December 1950
+  projects:
+    - name: Raft On Steroid
+      descriptions:
+        - Can fly with voice assistant control
+        - Over 2000 students used it so far
+    - name: Shiny Ruby
+      descriptions:
+        - Over 200 variant of pink, black and white
+        - Qualified for as the best jewelry presented by Voldemort
