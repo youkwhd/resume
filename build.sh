@@ -16,4 +16,9 @@ if [ ! -e data.public.yaml ]; then
     ./gen-data.pl --encrypt
 fi
 
+if [ ! -e data.yaml ]; then
+    file_check_or_exit data.public.yaml
+    ./gen-data.pl --decrypt
+fi
+
 ./gen-resume.pl | pdflatex --jobname=resume
