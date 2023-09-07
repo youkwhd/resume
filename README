@@ -1,7 +1,8 @@
 Résumé
 ======
 
-Written in LaTeX
+Resume template and generator, generated with Perl using
+Template::Toolkit and LaTeX.
 
 Dependencies
 ------------
