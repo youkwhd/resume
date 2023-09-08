@@ -1,14 +1,14 @@
-#!/usr/bin/perl -I.
+#!/usr/bin/perl -Idata -Ilib
 
-use warnings;
 use strict;
+use warnings;
 
 use Switch;
 use Template;
 use File::Slurp;
 use YAML::XS "LoadFile";
 
-require "constants.pl";
+require Constants;
 
 my $nargs = $#ARGV + 1;
 
