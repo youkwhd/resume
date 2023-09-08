@@ -4,6 +4,9 @@ Résumé
 Resume template and generator, generated with Perl using
 Template::Toolkit and LaTeX.
 
+A pre-generated product of the resume can be seen from the file
+resume.example.pdf
+
 Dependencies
 ------------
 
