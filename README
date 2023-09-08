@@ -19,9 +19,15 @@ If you already have perl installed:
 
     cpanm --installdeps .
 
-Usage
------
+Quick Start
+-----------
 
-Generate resume.pdf:
+Copy the data.example.yaml into data.yaml:
+
+    cp data/data.example.yaml data/data.yaml
+
+Run this to generate PDF file if you have your own data defined
+at data/data.yaml (see instruction before):
 
     ./build.sh
+
