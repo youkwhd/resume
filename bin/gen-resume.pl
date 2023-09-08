@@ -1,16 +1,33 @@
 #!/usr/bin/perl -I.
 
-require "common.pl";
-require "key.pl";
-
 use warnings;
 use strict;
-use Data::Dumper;
-use YAML::XS "LoadFile";
+
+use Switch;
 use Template;
 use File::Slurp;
+use YAML::XS "LoadFile";
 
-my $tt = Template->new();
-my $data = LoadFile("data.yaml");
+require "constants.pl";
 
-$tt->process("resume.template.tex", $data, my $resume);
+my $nargs = $#ARGV + 1;
+
+sub generate_and_print_resume ($) {
+    my $tt = Template->new();
+    my $data = LoadFile($_[0]);
+
+    $tt->process(Constants->RESUME_TEMPLATE_FILENAME, $data, my $resume);
+}
+
+switch ($nargs) {
+    case 1 {
+        generate_and_print_resume 
+            (($ARGV[0] eq "--example") ? 
+                Constants->DATA_EXAMPLE_FILENAME : 
+                Constants->DATA_FILENAME);
+    }
+    else {
+        generate_and_print_resume
+            Constants->DATA_FILENAME;
+    }
+}

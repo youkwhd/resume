@@ -1,6 +1,7 @@
 package Key;
 
 require "common.pl";
+require "constants.pl";
 
 use warnings;
 use strict;
@@ -8,8 +9,7 @@ use strict;
 use File::Slurp;
 
 sub get_private_key {
-    my $private_key_file = "private-key";
-    my $key = read_file $private_key_file;
+    my $key = read_file PRIVATE_KEY_FILENAME;
     Common::trim $key;
 }
 
