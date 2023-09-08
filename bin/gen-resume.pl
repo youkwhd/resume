@@ -27,7 +27,6 @@ switch ($nargs) {
                 Constants->DATA_FILENAME);
     }
     else {
-        generate_and_print_resume
-            Constants->DATA_FILENAME;
+        generate_and_print_resume(Constants->DATA_FILENAME);
     }
 }
