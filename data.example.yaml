@@ -11,12 +11,20 @@ sections:
       description: Bachelor of Wizardry, Half Blood Prince
       start: August 1945
       end: December 1950
+  experiences:
+    - title: Coffee Manager at the Snape's Cafe
+      date: December 1945
+      description: Internship at Snape's Cafe
+      keypoints:
+        - Sold roughly 800 fake coffees
   projects:
     - name: Raft On Steroid
-      descriptions:
+      description: Raft that roks!
+      keypoints:
         - Can fly with voice assistant control
         - Over 2000 students used it so far
     - name: Shiny Ruby
-      descriptions:
+      description: I don't know
+      keypoints:
         - Over 200 variant of pink, black and white
         - Qualified for as the best jewelry presented by Voldemort
