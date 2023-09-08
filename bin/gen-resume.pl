@@ -19,14 +19,7 @@ sub generate_and_print_resume ($) {
     $tt->process(Constants->RESUME_TEMPLATE_FILENAME, $data, my $resume);
 }
 
-switch ($nargs) {
-    case 1 {
-        generate_and_print_resume 
-            (($ARGV[0] eq "--example") ? 
-                Constants->DATA_EXAMPLE_FILENAME : 
-                Constants->DATA_FILENAME);
-    }
-    else {
-        generate_and_print_resume(Constants->DATA_FILENAME);
-    }
-}
+generate_and_print_resume
+    (($nargs >= 1 && $ARGV[0] eq "--example") ?
+        Constants->DATA_EXAMPLE_FILENAME :
+        Constants->DATA_FILENAME)
