@@ -8,8 +8,4 @@ sub trim {
     $_[0];
 }
 
-sub j {
-    print "j";
-}
-
 1;
