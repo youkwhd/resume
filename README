@@ -34,3 +34,6 @@ at data/data.yaml (see instruction before):
 
     ./build.sh
 
+Or, if you're using MS DOS:
+
+    powershell.exe -ExecutionPolicy Bypass .\build.ps1
