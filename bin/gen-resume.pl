@@ -21,7 +21,7 @@ sub generate_and_print_resume ($) {
 sub usage {
     print STDERR
         "Usage: $0\n",
-        "Generates TeX file from " . Constants->RESUME_TEMPLATE_FILENAME .  " with" . Constants->DATA_FILENAME . " \n";
+        "Generates TeX file from " . Constants->RESUME_TEMPLATE_FILENAME .  " with " . Constants->DATA_FILENAME . " \n";
 }
 
 unless (-e Constants->DATA_FILENAME) {
