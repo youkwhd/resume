@@ -3,7 +3,6 @@
 use strict;
 use warnings;
 
-use Switch;
 use Template;
 use File::Slurp;
 use YAML::XS "LoadFile";
