@@ -19,9 +19,10 @@ if ($nargs <= 0) {
 }
 
 sub usage {
-    print "Usage: $0 --encrypt | --decrypt\n",
-          "Encrypts or decrypts the data*.yaml file\n",
-          "This acts like a snapshot for saving private ".Constants->DATA_FILENAME." file\n";
+    print STDERR 
+        "Usage: $0 --encrypt | --decrypt\n",
+        "Encrypts or decrypts the data*.yaml file\n",
+        "This acts like a snapshot for saving private " . Constants->DATA_FILENAME . " file\n";
 }
 
 sub encrypt_data {
