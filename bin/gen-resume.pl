@@ -13,8 +13,9 @@ my $nargs = $#ARGV + 1;
 
 sub generate_and_print_resume ($) {
     my $tt = Template->new();
-    my $data = LoadFile($_[0]);
+    my $data = LoadFile $_[0];
 
+    # Processes the resume template and prints it to stdout
     $tt->process(Constants->RESUME_TEMPLATE_FILENAME, $data, my $resume);
 }
 
