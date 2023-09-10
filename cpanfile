@@ -1,5 +1,5 @@
 requires 'Switch';
 requires 'CryptX';
+requires 'File::Slurp';
 requires 'YAML::XS';
-requires 'Data::Dumper';
 requires 'Template';
