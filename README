@@ -7,14 +7,6 @@ Template::Toolkit and LaTeX.
 A pre-generated product of the resume can be seen from the file
 resume.example.pdf, which uses the data data/data.example.yaml
 
-Dependencies
-------------
-
-Ensure to install:
-
-- texlive (Any LaTeX)
-- perl
-
 Installation
 ------------
 
