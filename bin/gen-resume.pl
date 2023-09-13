@@ -5,7 +5,7 @@ use warnings;
 
 use Template;
 use File::Slurp;
-use YAML::XS "LoadFile";
+use YAML::XS qw(LoadFile);
 
 require Constants;
 
