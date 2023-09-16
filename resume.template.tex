@@ -36,13 +36,15 @@
 
     \begin{entry}{Experience}
         [% FOREACH experience IN sections.experiences -%]
-        \noindent \textbf{[% experience.title %]} \hfill \textit{[% experience.date %]} \\
+        \noindent \textbf{[% experience.title %]} [% IF experience.links %] $|$ [% END %]
+        [% FOREACH link IN experience.links -%] \href{[% link.1 %]}{[% link.0 %]} [% IF NOT loop.last %] $|$ [% END %] [% END -%]
+        \hfill \textit{[% experience.date %]} \\
         [% experience.description %]
         \begin{itemize}
             \setlength\itemsep{1px}
             [% FOREACH point IN experience.keypoints -%]
             \item [% point %]
-            [%- END %]
+            [% END %]
         \end{itemize}
         [%- END %]
 
@@ -51,8 +53,9 @@
 
     \begin{entry}{Projects}
         [% FOREACH project IN sections.projects -%]
-        \noindent
-        \textbf{[% project.name %]} \hfill \textit{[% project.date %]} \\
+        \noindent \textbf{[% project.name %]} [% IF project.links %] $|$ [% END %]
+        [% FOREACH link IN project.links -%] \href{[% link.1 %]}{[% link.0 %]} [% IF NOT loop.last %] $|$ [% END %] [% END -%]
+        \hfill \textit{[% project.date %]} \\
         [% project.description %]
         \begin{itemize}
             \setlength\itemsep{1px}
