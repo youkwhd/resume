@@ -73,5 +73,14 @@
         \textbf{[% education.name %]} \hfill \textbf{[% education.place %]} \\
         [% education.description %] \hfill \textit{[% education.start %] - [% education.end %]}
         [%- END %]
+
+        \vspace{15pt}
     \end{entry}
+
+    \begin{entry}{Skills}
+        [% FOREACH skill IN sections.skills -%]
+        \textbf{[% skill.label %]}: [% skill.items %] \\
+        [%- END %]
+    \end{entry}
+
 \end{document}

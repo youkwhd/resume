@@ -43,3 +43,8 @@ sections:
       keypoints:
         - Over 200 variant of pink, black and white
         - Qualified for as the best jewelry presented by Voldemort
+  skills:
+    - label: Languages
+      items: English, Snake
+    - label: Technologies
+      items: Spoon, Flying Broomstick, Talking Balls Ballz
