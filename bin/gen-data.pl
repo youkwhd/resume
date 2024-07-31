@@ -12,12 +12,6 @@ require Bits;
 require String;
 require Constants;
 
-my $nargs = $#ARGV + 1;
-
-if ($nargs <= 0) {
-    die "Not enough arguments";
-}
-
 sub usage {
     print STDERR 
         "Usage: $0 --encrypt | --decrypt\n",
@@ -41,6 +35,13 @@ sub decrypt_data {
 
     String::trim $data;
     write_file(Constants->DATA_FILENAME, $crypt->decrypt(Bits::hex_to_bin_little($data), $key));
+}
+
+
+my $nargs = $#ARGV + 1;
+if ($nargs <= 0) {
+    usage;
+    exit 1;
 }
 
 switch ($ARGV[0]) {
