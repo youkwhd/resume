@@ -34,6 +34,15 @@
 \begin{document}
     \maketitle
 
+    \begin{entry}{Education}
+        [% FOREACH education IN sections.education -%]
+        \textbf{[% education.name %]} \hfill \textbf{[% education.place %]} \\
+        [% education.description %] \hfill \textit{[% education.start %] - [% education.end %]}
+        [%- END %]
+
+        \vspace{15pt}
+    \end{entry}
+
     \begin{entry}{Experience}
         [% FOREACH experience IN sections.experiences -%]
         \noindent \textbf{[% experience.title %]}
@@ -66,15 +75,6 @@
         [%- END %]
 
         \vspace{5pt}
-    \end{entry}
-
-    \begin{entry}{Education}
-        [% FOREACH education IN sections.education -%]
-        \textbf{[% education.name %]} \hfill \textbf{[% education.place %]} \\
-        [% education.description %] \hfill \textit{[% education.start %] - [% education.end %]}
-        [%- END %]
-
-        \vspace{15pt}
     \end{entry}
 
     \begin{entry}{Skills}
