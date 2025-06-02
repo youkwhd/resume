@@ -2,6 +2,7 @@
 name: Jack 5
 email: johndoe@youkwhd.com
 website: youkwhd.com
+github: youkwhd
 phone: (+62) 666-1024-999 
 linkedin: www.linkedin.com/hogwarts/jack
 location: Atjeh, Indonesia
@@ -14,7 +15,7 @@ sections:
       end: December 1950
   experiences:
     - company: Snape's Cafe
-      job: Barista
+      position: Barista
       date: December 1945
       description: Internship at Snape's Cafe
       keypoints:
