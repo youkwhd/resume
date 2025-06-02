@@ -3,6 +3,7 @@
 % Document margins
 \usepackage[left=0.40in,top=0.3in,right=0.75in,bottom=0.1in]{geometry}
 \usepackage[colorlinks=true, urlcolor=blue, linkcolor=red]{hyperref}
+\usepackage{enumitem}
 \usepackage{xcolor}
 
 \pagestyle{empty}
@@ -15,18 +16,22 @@
     \vskip -0.6em
     \noindent {\color{black}\rule{\textwidth}{1pt}}
     \normalsize
-    \vspace{-0.5em}
+    \vspace{-1.2em}
     \noindent \\
 }
 
 \makeatletter
 \def \@maketitle {
     \begin{center}
-        \textbf{\Huge \@author} \\ \vspace{3pt}
+        \textbf{\LARGE \@author} \\ \vspace{4pt}
 
-        [% location %] \\ \vspace{3pt}
+        %% [% location %] \\ \vspace{3pt}
 
-        [% phone %] $|$ \href{mailto:[% email %]}{[% email %]} $|$ \href{https://[% website %]}{[% website %]} $|$ \href{https://[% linkedin %]}{LinkedIn} \\
+        %% \href{https://[% website %]}{[% website %]} $|$ 
+        %% \href{https://[% linkedin %]}{LinkedIn} $|$
+        %% $|$ [% location %]
+
+        [% phone %] $|$ \href{mailto:[% email %]}{[% email %]} $|$ \href{https://github.com/[% github %]}{github.com/[% github %]} $|$ [% location %] \\
     \end{center}
 }
 \makeatother
@@ -40,16 +45,15 @@
         [% education.description %] \hfill \textit{[% education.start %] - [% education.end %]}
         [%- END %]
 
-        \vspace{15pt}
+        \vspace{8pt}
     \end{entry}
 
     \begin{entry}{Experience}
         [% FOREACH experience IN sections.experiences -%]
-        \noindent \textbf{[% experience.company %]} $|$ [% experience.job %]
+        \noindent \textbf{[% experience.company %]} $|$ [% experience.position %]
         \hfill \textit{[% experience.date %]} \\
         [% experience.description %]
-        \begin{itemize}
-            \setlength\itemsep{1px}
+        \begin{itemize}[itemsep=1pt, topsep=2pt, parsep=0pt, partopsep=0pt]
             [% FOREACH point IN experience.keypoints -%]
             \item [% point %]
             [% END %]
@@ -65,8 +69,7 @@
         [% FOREACH link IN project.links -%] $|$ \href{[% link.1 %]}{[% link.0 %]} [% END -%]
         \hfill \textit{[% project.date %]} \\
         [% project.description %]
-        \begin{itemize}
-            \setlength\itemsep{1px}
+        \begin{itemize}[itemsep=1pt, topsep=2pt, parsep=0pt, partopsep=0pt]
             [% FOREACH point IN project.keypoints -%]
             \item [% point %]
             [%- END %]
